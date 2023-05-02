@@ -3,6 +3,9 @@ import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
+import {initHeaderModules} from './modules/header/index.js';
+import {initLocomotiveScroll} from './modules/scroll-smoother/init-locomotive';
+import {initScrollTrigger} from './modules/scroll-smoother/init-scroll-trigger';
 
 // ---------------------------------
 
@@ -12,6 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
+  initHeaderModules();
 
   // Modules
   // ---------------------------------
@@ -22,6 +26,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
     uploadFile();
     uploadImageDrop();
+    initLocomotiveScroll();
+    initScrollTrigger();
     const select = new CustomSelect();
     select.init();
     const form = new Form();
