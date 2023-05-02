@@ -16,7 +16,7 @@ html {
   font-weight: 400;
   font-size: $fz-default;
   line-height: 24px;
-  font-family: $ff-placeholder;
+  font-family: $ff-inter;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -25,9 +25,23 @@ html {
   text-rendering: optimizeLegibility;
   // если по прежнему есть проблемы с выравниванием
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
+
+  @media screen and (pointer: coarse) {
+    position: fixed;
+    min-height: calc(100 * var(--vh, 1vh));
+    max-height: calc(100 * var(--vh, 1vh));
+    width: 100%;
+
+    .wrapper {
+      overflow: auto;
+      max-height: 100vh;
+      max-height: calc(100 * var(--vh, 1vh));
+    }
+  }
 }
 
 body {
+  // padding-top: var(--header-height);
   width: 100%;
   height: 100%;
 
@@ -49,6 +63,7 @@ video {
 textarea {
   resize: none;
 }
+
 
 // chrome autofill background removal
 // если на проекте у инпутов используются разные цвета фонов\текста -
