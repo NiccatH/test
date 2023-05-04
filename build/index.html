@@ -8,7 +8,7 @@
     <meta name="description" content="ProjectName — описание">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body>
+  <body class="scroll-lock-ios">
     <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><g fill="none"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></g></symbol><symbol id="icon-logo" viewBox="0 0 362 67">
   <g fill="none">
       <path d="M9.23295 2.54544V52H0.49147V2.54544H9.23295Z" fill="currentColor"/>
@@ -54,10 +54,43 @@
         </nav>
       </header>
       <main>
+        <section class="intro" data-animate="intro" data-section-animation data-start="top top" data-end="bottom top">
+          <div class="intro__sticky">
+            <div class="container" data-animation="scale: 0.75, opacity: 0.5, rotateX: 5deg, y: -10vh" data-animation-direction="to">
+              <div class="intro__heading">
+                <h1 class="intro__title title" data-splitting>Задачки<br>на прокачку</h1>
+                <p class="intro__description" data-splitting>Задачи на&nbsp;интерфейсную логику,<br>которые часто встречаются<br>на&nbsp;реальных проектах</p>
+              </div>
+              <div class="intro__cards" data-animation="scale: 0.7" data-animation-direction="to" data-position="0"><a class="card-simple" href="#menu" data-move-to="#menu">
+                  <h2 class="card-simple__title title title--h3">Меню</h2></a><a class="card-simple" href="#loader" data-move-to="#loader">
+                  <h2 class="card-simple__title title title--h3">Лоадер</h2></a><a class="card-simple" href="#first-screen" data-move-to="#first-screen">
+                  <h2 class="card-simple__title title title--h3">Сборка первого экрана</h2></a><a class="card-simple" href="#show-on-scroll" data-move-to="#show-on-scroll">
+                  <h2 class="card-simple__title title title--h3">Появление блоков</h2></a><a class="card-simple" href="#parallax" data-move-to="#parallax">
+                  <h2 class="card-simple__title title title--h3">Параллакс</h2></a><a class="card-simple" href="#scroll-slider" data-move-to="#scroll-slider" data-offset="-1">
+                  <h2 class="card-simple__title title title--h3">Слайдер по скроллу</h2></a>
+              </div>
+            </div>
+            <div class="intro__bg">
+              <video src="video/background-wave.mp4" alt="waaaavee" autoplay="true" muted="true" loop playsinline></video>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="footer">
         <div class="container"></div>
       </footer>
+    </div>
+    <div class="loader" data-loader="container">
+      <div class="container">
+        <div class="loader__box">
+          <div class="loader__box-wrapper" data-loader="box">
+            <div class="loader__box-item"></div>
+            <div class="loader__box-item"></div>
+            <div class="loader__box-item"></div>
+            <div class="loader__box-item"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
