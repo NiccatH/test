@@ -1,10 +1,59 @@
-mixin intro()
-  //- .intro
-  //-   //- вставлять блоки во внешний контейнер неверно
-  //-   //- все блоки содержат в себе container без доп класса tutorial__wrapper
-  //-   .container
-  //-     p(style="margin-top: 40px;") Текст&nbsp;с&nbsp;мнемониками
+-
+  const cards = [
+    {
+      title: 'Меню',
+      dataAttr: {
+        'href': '#menu',
+        'data-move-to': '#menu',
+      },
+    },
+    {
+      title: 'Лоадер',
+      dataAttr: {
+        'href': '#loader',
+        'data-move-to': '#loader',
+      },
+    },
+    {
+      title: 'Сборка первого экрана',
+      dataAttr: {
+        'href': '#first-screen',
+        'data-move-to': '#first-screen',
+      },
+    },
+    {
+      title: 'Появление блоков',
+      dataAttr: {
+        'href': '#show-on-scroll',
+        'data-move-to': '#show-on-scroll',
+      },
+    },
+    {
+      title: 'Параллакс',
+      dataAttr: {
+        'href': '#parallax',
+        'data-move-to': '#parallax',
+      },
+    },
+    {
+      title: 'Слайдер по скроллу',
+      dataAttr: {
+        'href': '#scroll-slider',
+        'data-move-to': '#scroll-slider',
+        'data-offset': '-1',
+      },
+    },
+  ]
 
-  //-     p(style="margin-top: 40px;") Пример использования +img()
-  //-     p(style="margin-bottom: 40px;")
-  //-       +img("content", "placeholder", "png", 120, 120, "Пример")
+mixin intro()
+  section.intro(data-animate="intro" data-section-animation data-start="top top" data-end="bottom top")
+    .intro__sticky
+      .container(data-animation="scale: 0.75, opacity: 0.5, rotateX: 5deg, y: -10vh" data-animation-direction="to")
+        .intro__heading
+          h1.intro__title.title(data-splitting) Задачки<br>на прокачку
+          p.intro__description(data-splitting) Задачи на&nbsp;интерфейсную логику,<br>которые часто встречаются<br>на&nbsp;реальных проектах
+        .intro__cards(data-animation="scale: 0.7" data-animation-direction="to" data-position="0")
+          each card in cards
+            +card-simple(card)
+      .intro__bg
+        video(src="video/background-wave.mp4" alt="waaaavee" autoplay="true" muted="true" loop playsinline)

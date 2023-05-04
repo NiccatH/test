@@ -3,6 +3,7 @@
 
 @import "vendor/normalize";
 @import "vendor/locomotive-scroll";
+@import "vendor/splitting";
 // Swiper 7.4.1
 // @import "vendor/swiper";
 
@@ -29,6 +30,10 @@
 @import "blocks/custom-toggle";
 @import "blocks/custom-select";
 @import "blocks/input-upload";
+@import "blocks/loader";
+@import "blocks/intro";
+@import "blocks/card-simple";
+@import "blocks/title";
 
 // ---------------------------------
 
