@@ -1,0 +1,8 @@
+mixin section(data)
+  section.section&attributes(attributes)
+    .container
+      .content-block
+        h2!=data.title
+        each p in data.paragraphs
+          p!=p
+        block
