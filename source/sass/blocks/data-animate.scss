@@ -1,0 +1,13 @@
+[data-animate="fade"] [data-animate-item] {
+  opacity: 0;
+}
+
+[data-animate="fadeIn"] [data-animate-item] {
+  opacity: 0;
+  transform: translate3d(0, 10%, 0);
+}
+
+[data-animate="fadeScale"] [data-animate-item] {
+  opacity: 0;
+  transform: scale(0);
+}

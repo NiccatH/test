@@ -1,0 +1,53 @@
+.section {
+  padding-top: 90px;
+  position: relative;
+  background-color: $color-default-white;
+
+  p {
+    margin: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 90px;
+  }
+
+  &__cards-container {
+    &:not(:last-child) {
+      margin-bottom: 45px;
+    }
+
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .content-block {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
+  }
+
+  @include vp-767 {
+    padding-top: 45px;
+
+    &:last-of-type {
+      padding-top: 45px;
+    }
+
+    .content-block {
+      max-width: 100%;
+    }
+  }
+
+  .slider {
+    &:not(:first-child) {
+      margin-top: 35px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+}

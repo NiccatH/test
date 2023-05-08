@@ -1,4 +1,8 @@
 mixin card-simple(data)
-  a.card-simple&attributes(data.dataAttr)
-    h2.card-simple__title.title.title--h3!=data.title
+  if data.paragraph
+    .card-simple&attributes(data.dataAttr)
+      p.title.title--h3!=data.title
+  else
+    a.card-simple&attributes(data.dataAttr)
+      h2.card-simple__title.title.title--h3!=data.title
 

@@ -5,7 +5,7 @@ block variables
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
-  - const hasFooter = true
+  - const hasFooter = false
   - const footerMods = ""
   - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
   - const hasPreloader = true
@@ -15,5 +15,18 @@ block main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
     +intro()
+    +section(sectionDataMenu)#menu
+    +section(sectionDataLoader)#loader
+    +section(sectionDataFirstScreen)#first-screen
+    +section(sectionDataShowOnScroll)#show-on-scroll
+      .section__cards-container
+        each card in scrollCards
+          div&attributes(card.gsapAttr)
+            +card-simple(card)
+    +section(sectionDataParallax)#parallax
+      .section__cards-container
+        each card in parallaxCards
+          div&attributes(card.gsapAttr)
+            +card-simple(card)
 
 block modals

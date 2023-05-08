@@ -460,7 +460,7 @@ html.has-scroll-dragging {
 .splitting .word::after {
   content: attr(data-word);
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 0;
   -webkit-transition: inherit;
   -o-transition: inherit;
@@ -2998,8 +2998,8 @@ button,
   -o-transition: transform 0.4s ease-out;
   transition: transform 0.4s ease-out;
   transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
-  -webkit-transform: translate3d(0, 100%, 0);
-          transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 105%, 0);
+          transform: translate3d(0, 105%, 0);
   -webkit-transition-delay: calc(0.08s * var(--line-index));
        -o-transition-delay: calc(0.08s * var(--line-index));
           transition-delay: calc(0.08s * var(--line-index));
@@ -3248,6 +3248,69 @@ button,
     font-size: 16px;
     line-height: 20px;
   }
+}
+
+.section {
+  padding-top: 90px;
+  position: relative;
+  background-color: #ffffff;
+}
+.section p {
+  margin: 0;
+}
+.section:last-of-type {
+  padding-bottom: 90px;
+}
+.section__cards-container {
+  margin-top: 45px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding-bottom: 20px;
+}
+.section__cards-container:not(:last-child) {
+  margin-bottom: 45px;
+}
+.section .content-block {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70%;
+}
+@media (max-width: 767px) {
+  .section {
+    padding-top: 45px;
+  }
+  .section:last-of-type {
+    padding-top: 45px;
+  }
+  .section .content-block {
+    max-width: 100%;
+  }
+}
+.section .slider:not(:first-child) {
+  margin-top: 35px;
+}
+.section .slider:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+[data-animate=fade] [data-animate-item] {
+  opacity: 0;
+}
+
+[data-animate=fadeIn] [data-animate-item] {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 10%, 0);
+          transform: translate3d(0, 10%, 0);
+}
+
+[data-animate=fadeScale] [data-animate-item] {
+  opacity: 0;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
 }
 
 /* @mixin hover-focus {

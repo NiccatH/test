@@ -1,0 +1,162 @@
+-
+  const sectionDataMenu = {
+    title: "Меню тз",
+    paragraphs: [
+      '<b>Анимация появления</b>',
+      'При открытии: Сначала появляется меню, затем внутренний контент. Пункты внутри появляются с разной задержкой - эффект "лесенки"',
+      'При закрытии: Внутренний контент исчезает до закрытия меню, без задержки',
+      'Анимация меню на данном сайте реализована с помощью css (это база). Можете так же реализовать анимацию с помощью gsap',
+      '<b>JS</b>',
+      'Для блокировки скролла используется window.scrollLock',
+      'Должны быть реализованы функции или методы для открытия и закрытия меню, которые можно использовать в других модулях',
+    ],
+  }
+
+  const sectionDataLoader = {
+    title: "Лоадер тз",
+    paragraphs: [
+      'Анимация лоадера произвольная, можно использовать css keyframes или gsap',
+      'После загрузки страницы мы всегда находимся вверху страницы (не должно быть видно скачка)',
+      'Скролл страницы заблокирован во время загрузки'
+    ],
+  }
+
+  const sectionDataFirstScreen = {
+    title: "Сборка первого экрана тз",
+    paragraphs: [
+      'Для анимации используйте неколько разных css свойств и небольшие задержки',
+      'Для построчной или посимвольной анимации текста используйте <a href="https://splitting.js.org" target="_blank">splitting.js</a> (пример: интро этого сайта)',
+    ],
+  }
+
+  const sectionDataShowOnScroll = {
+    title: "Появление блоков",
+    paragraphs: [
+      'доскролили и вжух!',
+      'Можно делать через классы и высчитывать по скроллу getBoundingClientRect каждого блока, но гораздо проще использовать ScrollTrigger.batch()',
+    ],
+  }
+
+  const sectionDataParallax = {
+    title: "Параллакс по скроллу",
+    paragraphs: [
+      'Эффекты, которые постоянно срабатывают по скроллу<br>Скроллим скроллим и вжух вжух вжух!',
+    ],
+  }
+
+  const scrollCards = [
+    {
+      gsapAttr: {
+        'data-animate': 'fade',
+      },
+      paragraph: true,
+      title: 'fade',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-animate-item': '',
+      },
+    },
+    {
+      gsapAttr: {
+        'data-animate': 'fade',
+      },
+      paragraph: true,
+      title: 'fade',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-animate-item': '',
+      },
+    },
+    {
+      gsapAttr: {
+        'data-animate': 'fadeIn',
+      },
+      paragraph: true,
+      title: 'fade-in',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-animate-item': '',
+      },
+    },
+    {
+      gsapAttr: {
+        'data-animate': 'fadeIn',
+      },
+      paragraph: true,
+      title: 'fade-in',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-animate-item': '',
+      },
+    },
+    {
+      gsapAttr: {
+        'data-animate': 'fadeScale',
+      },
+      paragraph: true,
+      title: 'fade-scale',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-animate-item': '',
+      },
+    },
+    {
+      gsapAttr: {
+        'data-animate': 'fadeScale',
+      },
+      paragraph: true,
+      title: 'fade-scale',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-animate-item': '',
+      },
+    },
+  ]
+
+  const parallaxCards = [
+    {
+      gsapAttr: {
+        'data-parallax': 'fadeScale',
+      },
+      paragraph: true,
+      title: 'fade-scale',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-parallax': 'item',
+      },
+    },
+    {
+      gsapAttr: {
+        'data-parallax': 'fadeScale',
+      },
+      paragraph: true,
+      title: 'fade-scale',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-parallax': 'item',
+      },
+    },
+    {
+      gsapAttr: {
+        'data-parallax': 'transformY',
+      },
+      paragraph: true,
+      title: 'transform y',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-parallax': 'item',
+      },
+    },
+     {
+      gsapAttr: {
+        'data-parallax': 'transformY',
+        'data-from': '70%',
+      },
+      paragraph: true,
+      title: 'transform y',
+      dataAttr: {
+        'class': 'card-simple--dark card-simple--centered',
+        'data-parallax': 'item',
+      },
+    },
+  ]
