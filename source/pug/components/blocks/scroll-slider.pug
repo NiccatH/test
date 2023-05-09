@@ -1,0 +1,35 @@
+-
+  const slides = [
+    {
+      title: 'Scroll Slider',
+      p: 'переключение полноэкранных слайдов по скроллу',
+      bg: `url('img/svg/architect-bg.svg')`,
+      active: true,
+    },
+    {
+      title: 'Position: sticky;',
+      p: 'Просто стики. Не нужно мучаться с position: fixed; или pin: true,<br>(т.к. баги на тач неисправимы)',
+      bg: `url('img/svg/squares-bg.svg')`,
+    },
+    {
+      title: 'gsap scrollTrigger',
+      p: 'без getBoundingClientRect<br>ScrollTrigger делает всю рутину за нас',
+      bg: `url('img/svg/plus-bg.svg')`,
+    },
+    {
+      title: 'ios friendly???',
+      p: 'не забывайте добавлять вокруг transform: translate3d(0, 0, 0);',
+      bg: `url('img/svg/graph-paper-bg.svg')`,
+    },
+  ]
+
+mixin scroll-slider()
+  .scroll-slider(data-scroll-slider="parent")
+    section.scroll-slider__sticky#scroll-slider(data-scroll-slider="sticky")
+      each slide in slides
+        .scroll-slider__slide(data-scroll-slider="slide" class=slide.active ? 'is-active' : '')
+          .container
+            .content-block.content-block--centered
+              h2!=slide.title
+              p!=slide.p
+          .scroll-slider__bg(style=`background-image: ${slide.bg};`)
