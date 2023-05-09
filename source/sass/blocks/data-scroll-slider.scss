@@ -1,0 +1,35 @@
+[data-scroll-slider="parent"] {
+  position: relative;
+  min-height: 100vh;
+
+  [data-scroll-slider="sticky"] {
+    position: sticky;
+    top: 0;
+
+    min-height: 100vh;
+    max-height: 100vh;
+
+    overflow: hidden;
+  }
+
+  [data-scroll-slider="slide"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-height: calc(100 * var(--vh, 1vh));
+    max-height: calc(100 * var(--vh, 1vh));
+
+    opacity: 0;
+    pointer-events: none;
+    transition: $trans-default;
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

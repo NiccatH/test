@@ -12,13 +12,13 @@ const fadeScaleParallax = () => {
 
   items.forEach((item) => {
     const animateContainer = item.querySelector('[data-parallax="item"]');
-    gsap.set(animateContainer, {opacity: 0, scale: 0.5});
+    gsap.set(animateContainer, {opacity: 0, scale: 0.7});
     const tl = gsap.to(animateContainer, {opacity: 1, scale: 1});
     ScrollTrigger.create({
       trigger: item,
       scroller: pageScroller,
       start: 'top bottom',
-      end: vp767.matches ? 'center center' : 'top nottom',
+      end: vp767.matches ? 'center center' : 'top center',
       scrub: true,
       animation: tl,
     });
@@ -39,7 +39,7 @@ const transformYParallax = () => {
       trigger: item,
       scroller: pageScroller,
       start: 'top bottom',
-      end: vp767.matches ? 'center center' : 'top bottom',
+      end: vp767.matches ? 'center center' : 'top center',
       scrub: true,
       animation: tl,
     });
