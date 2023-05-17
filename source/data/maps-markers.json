@@ -1,0 +1,104 @@
+{
+  "mapMarkers": [
+    {
+      "latLng": [59.969764, 30.325460],
+      "textHead": "Парки",
+      "title": "Ботанический сад",
+      "text": "ул. Профессора Попова, д. 2П",
+      "imagePath": "img/content/pin-park-1.jpg",
+      "imageAlt": "фото",
+      "category": "park",
+      "icon": "icon-park"
+    },
+    {
+      "latLng": [59.967786, 30.310840],
+      "textHead": "Сквер Профессора Попова",
+      "title": "Дербеневская",
+      "text": "Каменоострочвкий просп., д. 41",
+      "imagePath": "img/content/pin-park-2.jpg",
+      "imageAlt": "фото",
+      "category": "park",
+      "icon": "icon-park"
+    },
+    {
+      "latLng": [59.966942, 30.306656],
+      "textHead": "Парки",
+      "title": "Сквер «Шевченко»",
+      "text": "Левашовский просп., д. 6",
+      "imagePath": "img/content/pin-park-3.jpg",
+      "imageAlt": "фото",
+      "category": "park",
+      "icon": "icon-park"
+    },
+    {
+      "latLng": [59.976905,30.305736],
+      "textHead": "Парки",
+      "title": "Лопухинский сад",
+      "text": "ул. Академика Павлова, д. 13",
+      "imagePath": "img/content/pin-park-9.jpg",
+      "imageAlt": "фото",
+      "category": "park",
+      "icon": "icon-park"
+    },
+    {
+      "latLng": [59.971255, 30.312506],
+      "textHead": "Музеи",
+      "title": "Музей истории фотографии",
+      "text": "ул. Профессора Попова, д. 23",
+      "imagePath": "img/content/pin-park-4.jpg",
+      "imageAlt": "фото",
+      "category": "museum",
+      "icon": "icon-museum"
+    },
+    {
+      "latLng": [59.972243,30.326065],
+      "textHead": "Музеи",
+      "title": "Музей Авторского фарфора",
+      "text": "ул. Профессора Попова, д. 6",
+      "imagePath": "img/content/pin-park-5.jpg",
+      "imageAlt": "фото",
+      "category": "museum",
+      "icon": "icon-museum"
+    },
+    {
+      "latLng": [59.968655, 30.312854],
+      "textHead": "Детский сад",
+      "title": "Детский сад №50",
+      "text": "наб. реки Карповки, д. 13",
+      "imagePath": "img/content/pin-park-6.jpg",
+      "imageAlt": "фото",
+      "category": "children",
+      "icon": "icon-children"
+    },
+    {
+      "latLng": [59.971903,30.315653],
+      "textHead": "Поликлиника",
+      "title": "НИИ им. Смородинцева",
+      "text": "просп. Медиков, д. 15",
+      "imagePath": "img/content/pin-park-7.jpg",
+      "imageAlt": "фото",
+      "category": "hospital",
+      "icon": "icon-hospital"
+    },
+    {
+      "latLng": [59.969123,30.305820],
+      "textHead": "Поликлиника",
+      "title": "Медикал Он групп",
+      "text": "наб. реки Карповки, д. 18",
+      "imagePath": "img/content/pin-park-10.jpg",
+      "imageAlt": "фото",
+      "category": "hospital",
+      "icon": "icon-hospital"
+    },
+    {
+      "latLng": [59.971871,30.311709],
+      "textHead": "Школа",
+      "title": "Гимназия №67",
+      "text": "ул. Профессора Попова, д. 25",
+      "imagePath": "img/content/pin-park-8.jpg",
+      "imageAlt": "фото",
+      "category": "school",
+      "icon": "icon-school"
+    }
+  ]
+}
