@@ -1,0 +1,63 @@
+-
+  const filterList = [
+    {
+      name: 'filterList',
+      value: 'all',
+      id: 'filterAll',
+      checked: true,
+      icon: 'icon-all-object',
+      text: 'Все объекты',
+    },
+    {
+      name: 'filterList',
+      value: 'park',
+      id: 'filterPark',
+      checked: false,
+      icon: 'icon-park',
+      text: 'Парки',
+    },
+    {
+      name: 'filterList',
+      value: 'museum',
+      id: 'filterMuseum',
+      checked: false,
+      icon: 'icon-museum',
+      text: 'Музеи',
+    },
+    {
+      name: 'filterList',
+      value: 'children',
+      id: 'filterChildren',
+      checked: false,
+      icon: 'icon-children',
+      text: 'Дет. сады',
+    },
+    {
+      name: 'filterList',
+      value: 'hospital',
+      id: 'filterHospital',
+      checked: false,
+      icon: 'icon-hospital',
+      text: 'Поликлиники',
+    },
+    {
+      name: 'filterList',
+      value: 'school',
+      id: 'filterSchool',
+      checked: false,
+      icon: 'icon-school',
+      text: 'Школы',
+    },
+  ]
+
+mixin map-filter()
+  .map-filter
+    form.map-filter__form(action='#' novalidate)
+      .map-filter__list
+        each item in filterList
+          .map-filter__item
+            input.visually-hidden(type="radio" name=item.name value=item.value id=item.id checked=item.checked)
+            label.map-filter__label(for=item.id)
+              .map-filter__icon
+                +icon(item.icon, 50, 50)
+              span!=item.text

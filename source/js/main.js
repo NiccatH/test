@@ -4,6 +4,8 @@ import {initHeaderModules} from './modules/header/index.js';
 import {Loader} from './modules/loader';
 import {initSplitter} from './modules/init-splitter';
 import {initAnimationModule} from './modules/animations';
+import {initScrollTo} from './modules/init-move-to';
+import {initMaps} from './modules/maps/init-maps.js';
 
 // ---------------------------------
 
@@ -23,6 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
     initSplitter();
+    initScrollTo();
+    initMaps();
   });
 
   window.addEventListener('loaderOff', () => {

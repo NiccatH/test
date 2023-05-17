@@ -1,0 +1,136 @@
+.placemark {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  outline: 0;
+  transition: z-index $trans-default, transform $trans-default, visibility $trans-default;
+  transform: translate3d(0,0,0);
+  z-index: 1;
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    background-color: $color-maya-blue;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.placemark-balloon {
+  max-width: 400px;
+  width: max-content;
+  display: flex;
+  box-shadow: 8px 8px 13px 1px rgba(34, 60, 80, 0.2);
+  z-index: 3;
+  transition: opacity .6s ease,visibility .6s ease,transform .6s ease;
+  min-height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transform: translateX(-50%);
+
+  &__inner {
+    display: flex;
+
+    background-color: $color-default-white;
+    height: 100%;
+  }
+
+  &__image {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__wrap {
+    padding: 10px 20px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__head {
+    color: #aaa5a0;
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0 0 10px 0;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__text {
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0;
+  }
+
+  &__close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background-color: $color-transparent;
+    padding: 0;
+
+    svg {
+      fill: $color-default-black;
+    }
+  }
+}
+
+.cluster-balloon {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      height: 80px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__wrap {
+    padding: 10px;
+  }
+
+  &__head {
+    color: #aaa5a0;
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0 0 10px;
+    text-align: right;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__text {
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0;
+  }
+}

@@ -1,0 +1,13 @@
+mixin ya-map(data)
+  section.ya-map
+    .container
+      h1.title.ya-map__title!=data.title
+      h2!=data.subTitle
+      each p in data.paragraphs
+        p!=p
+      .ya-map__inner
+        .ya-map__map&attributes(data.dataAttr)
+        if data.message
+          .ya-map__message
+            p Зажмите ctrl и крутите колесо прокрутки мышки, что бы приблизить карту
+      block
