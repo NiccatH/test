@@ -20,11 +20,11 @@ export class EventObserver {
 const resizeObserver = new EventObserver();
 const resizeObserverProto = new ResizeObserver(() => setTimeout(() => resizeObserver.fire('resize'), 10));
 resizeObserverProto.observe(document.documentElement);
-
 export {resizeObserver};
 
-// везде следует использовать его прим: resizeObserver.subscribe(() => {console.log('asd')})
-
+const keyObserver = new EventObserver();
+window.addEventListener('keydown', keyObserver.fire);
+export {keyObserver};
 
 const clickObserver = new EventObserver();
 window.addEventListener('click', clickObserver.fire);
