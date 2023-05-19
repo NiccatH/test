@@ -1,28 +1,19 @@
 import {ScrollToPlugin} from '../vendor/scroll-to-plugin';
 import {pageScroller} from '../utils/page-scroller.js';
+import {clickObserver} from '../utils/observers';
 
-const header = document.querySelector('.header');
-
-const setOffset = (offset) => {
-  if (offset === 'header') {
-    if (!header) {
-      return 0; // если нет шапки на странице, то отступ = 0
-    }
-    return header.getBoundingClientRect().height; // отступ = высота шапки
+const scrollToHandler = (evt) => {
+  const btn = evt.target.closest('[data-move-to]');  //кнопка которая запускает событие
+  if (!btn) {
+    return;
   }
-
-  return offset;
-};
-
-const scrollToHandler = (e) => {
-  e.preventDefault();
-  const btn = e.target.closest('[data-move-to]');
-  const target = document.querySelector(btn.dataset.moveTo);
+  evt.preventDefault();  //отмена дефолтного поведения
+  const target = document.querySelector(btn.dataset.moveTo);  //цель куда перемещатся по нажатию на кнопку
 
   const options = {
-    duration: Math.abs(btn.getBoundingClientRect().top - target.getBoundingClientRect().top) / (window.innerHeight * 1.5),
-    offset: btn.dataset.offset ? setOffset(btn.dataset.offset) : 0,
-  };
+    duration: Math.abs(btn.getBoundingClientRect().top - target.getBoundingClientRect().top) / (window.innerHeight * 2),
+    offset: 0,
+  }; //объект настроек
 
 
   gsap.to(pageScroller === 'body' ? window : pageScroller, options.duration, {
@@ -31,14 +22,13 @@ const scrollToHandler = (e) => {
       offsetY: options.offset,
     },
     ease: 'power4.out',
-  });
-};
+  }); //идет выбор к кому привязать анимацию , далее передаем настройки цели и оффсет
+};  //хэндлер события нажатия на ссылку
 
 export const initScrollTo = () => {
-  gsap.registerPlugin(ScrollToPlugin);
-  const scrollToButtons = document.querySelectorAll('[data-move-to]');
-
-  scrollToButtons.forEach((btn) => {
-    btn.addEventListener('click', scrollToHandler);
-  });
-};
+  gsap.registerPlugin(ScrollToPlugin);  //ругистрируем плагин
+  if (!document.querySelector('[data-move-to]')) {
+    return;
+  }
+  clickObserver.subscribe(scrollToHandler);  //добавление в массив обсерверс клик обсервера функцию
+}; //инициализация функции
