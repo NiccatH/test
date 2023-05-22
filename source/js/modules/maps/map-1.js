@@ -1,24 +1,23 @@
 import {initMapPin} from './init-map-pin.js';
-import {initZoomMap} from './init-map-zoom.js';
 
 const initMap1 = (mapBlock) => {
-  const center = mapBlock.dataset.center.split(', ').map((str) => +str);
-  const zoom = +mapBlock.dataset.zoom;
-  const controls = mapBlock.dataset.controls ? mapBlock.dataset.controls.split(' ') : [];
-  const behaviorsMap = ['drag', 'multiTouch'];
+  const center = mapBlock.dataset.center.split(', ').map((str) => +str);  //создает массив из строки дата атра
+  const zoom = +mapBlock.dataset.zoom;  //значение зум из датасета
+  const controls = mapBlock.dataset.controls ? mapBlock.dataset.controls.split(' ') : [];  //опционально создает массив из контролов , если они есть в дата атр
+  const behaviorsMap = ['drag', 'multiTouch'];  //включает мультитач и перемещалку(перетаскивание)
 
   window.ymaps.ready(() => {
     const myMap = new ymaps.Map(mapBlock, {
-      center,
-      zoom,
-      controls,
-      behaviors: behaviorsMap,
+      center,  //параметр центра координат
+      zoom,  //зуум
+      controls,  //у нас он будет пустым , тк в дата атр ничего нет
+      behaviors: behaviorsMap,  //отвечает за интерактивность
     },
     {
-      autoFitToViewport: 'always',
+      autoFitToViewport: 'always',  //авторазмерность
     });
 
-    initMapPin(mapBlock, myMap);
+    initMapPin(mapBlock, myMap); //отрисовка пина в данном случае не передаем 'small' третьим параметром для отрисовки дефолт пина
   });
 };
 
