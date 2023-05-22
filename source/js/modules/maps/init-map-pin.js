@@ -1,6 +1,6 @@
-let pinSize;
-let offsetPin;
-let pinContentLayout;
+let pinSize;  //переменная для записи значения
+let offsetPin;  //переменная для записи значения
+let pinContentLayout; //переменная для записи значения
 
 const renderDefaultPin = () => {
   pinSize = [90, 108];
@@ -14,7 +14,7 @@ const renderDefaultPin = () => {
       </div>
     </div>
   `;
-};
+}; // при вызове записывает параметры в глобальные переменные
 
 const renderSmallPin = () => {
   pinSize = [50, 60];
@@ -28,10 +28,10 @@ const renderSmallPin = () => {
       </div>
     </div>
   `;
-};
+};  // при вызове записывает параметры в глобальные переменные
 
 const initMapPin = (mapBlock, ymap, pin) => {
-  const placeCords = mapBlock.dataset.center.split(',');
+  const placeCords = mapBlock.dataset.center.split(',');  //координата пина , совпадает с координатой центра на карте
 
   switch (pin) {
     case 'small':
@@ -40,29 +40,24 @@ const initMapPin = (mapBlock, ymap, pin) => {
     default:
       renderDefaultPin();
       break;
-  }
+  }  //если будет передан pin со значением 'small' отриусует маленькую иконку renderSmallPin , если ничего не передавать то отрисует дефолт renderDefaultPin
 
   // Блок с меткой
   // eslint-disable-next-line no-undef
-  const MyPlacemarkContentLayout = window.ymaps.templateLayoutFactory.createClass(pinContentLayout);
+  const MyPlacemarkContentLayout = window.ymaps.templateLayoutFactory.createClass(pinContentLayout);  //создает кастомный класс для отрисовки , сам темплейт записан в глобальную переменню после вызова одной из функций рендера пина
 
   // eslint-disable-next-line no-undef
   const myPlacemark = new window.ymaps.Placemark(placeCords, null, {
-    // Опции.
-    // Для меток с содержимым
-    placemarkType: 'mainPin',
-    iconLayout: 'default#imageWithContent',
-    // Прячет стандартую иконку
-    iconImageHref: '',
-    // Размеры метки с содержимым
-    iconContentSize: pinSize,
-    // Смещение от точки привязки (левого верхнего угла) до ножки
-    iconContentOffset: offsetPin,
-    iconContentLayout: MyPlacemarkContentLayout,
-    zIndex: 700,
-  });
+    placemarkType: 'mainPin',  //устанавливаем тип пина
+    iconLayout: 'default#imageWithContent',  //так как мы используем темплейт , а не просто иконку выбираем данный параметр
+    iconImageHref: '', // Прячет стандартую иконку, в темплейте мы используем спрайт
+    iconContentSize: pinSize,  //размерность иконки берет из заведенной глобальной переменной , в которую происходит записиь при вызове одного из двух рендеров
+    iconContentOffset: offsetPin,  //оффсет пина, все так же как и с параметром выше
+    iconContentLayout: MyPlacemarkContentLayout,  //все так же из глобальной переменной
+    zIndex: 700,  // устанавливаем з индекс
+  });  //создаем кастомный пин с параметрами , null отваечает за геометрию иконки
 
-  ymap.geoObjects.add(myPlacemark);
-};
+  ymap.geoObjects.add(myPlacemark);  //добавляем пин к карте
+};  //функция принимает блок к которому привязана и берет с нее параметры координат , конст карты и опциональный параметр пин , который будет отвечать за вид иконки
 
 export {initMapPin};

@@ -16,7 +16,7 @@ const initDefaultMap = (mapBlock) => {
       searchControlProvider: 'yandex#search',
     });
   });
-};
+};  //инициализация дефолтной карты , в случае если нет значения дата-мэп
 
 const initSetupMap = (mapId, mapBlock) => {
   switch (mapId) {
@@ -35,19 +35,19 @@ const initSetupMap = (mapId, mapBlock) => {
     default:
       initDefaultMap(mapBlock);
   }
-};
+};  //отрисовка в зависимости от дата-мэп
 
 const initMaps = () => {
-  const mapBlocks = document.querySelectorAll('.ya-map__map');
+  const mapBlocks = document.querySelectorAll('.ya-map__map');  //ищем все обертки куда добавляется карта
 
   if (!mapBlocks.length) {
     return;
-  }
+  }  //останавливаем дальнейшее выполнение если оберток под карты нет
 
   mapBlocks.forEach((mapBlock) => {
     const mapId = mapBlock.dataset.map;
     initSetupMap(mapId, mapBlock);
-  });
+  });  //проходимся по всем оберкатм получаем их дата-мэп и на каждой запускаем функцию отрисовки карты
 };
 
 export {initMaps};
