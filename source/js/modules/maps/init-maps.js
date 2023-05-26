@@ -2,6 +2,8 @@ import {initMap1} from './map-1.js';
 import {initMap2} from './map-2.js';
 import {initMap3} from './map-3.js';
 import {initMap4} from './map-4.js';
+import {initMap5} from './map-5.js';
+import {initMap6} from './map-6.js';
 
 const initDefaultMap = (mapBlock) => {
   // eslint-disable-next-line
@@ -20,6 +22,12 @@ const initDefaultMap = (mapBlock) => {
 
 const initSetupMap = (mapId, mapBlock) => {
   switch (mapId) {
+    case 'map-6':
+      initMap6(mapBlock);
+      break;
+    case 'map-5':
+      initMap5(mapBlock);
+      break;
     case 'map-4':
       initMap4(mapBlock);
       break;

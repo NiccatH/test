@@ -118,11 +118,11 @@
                 </li>
                 <li class="main-nav__item"><a class="main-nav__link" href="map-2.html"><span>Карта 2</span></a>
                 </li>
-                <li class="main-nav__item"><span class="main-nav__link is-active">Карта 3</span>
+                <li class="main-nav__item"><a class="main-nav__link" href="map-3.html"><span>Карта 3</span></a>
                 </li>
                 <li class="main-nav__item"><a class="main-nav__link" href="map-4.html"><span>Карта 4</span></a>
                 </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="map-5.html"><span>Карта 5</span></a>
+                <li class="main-nav__item"><span class="main-nav__link is-active">Карта 5</span>
                 </li>
                 <li class="main-nav__item"><a class="main-nav__link" href="map-6.html"><span>Карта 6</span></a>
                 </li>
@@ -134,85 +134,13 @@
       <main>
         <section class="ya-map">
           <div class="container">
-            <h1 class="title ya-map__title">Задание по карте №3</h1>
+            <h1 class="title ya-map__title">Доп задание(1вариант)</h1>
             <h2>Техническое задание</h2>
             <p>Реализовать карту через API Яндекс карт</p>
-            <p>Настроить кастомный пин на карте так, что бы его стрелочка четко указывала на центр координат, которые вы можете придумать сами</p>
-            <p>На десктопной версии при скролле колесиком мышки, карта не должна масштабироваться. Масштабировать ее можно только при нажатии клавиши Ctrl + колесико мышки. Если пользователь навел курсор на карту и начинает скролить мышкой, то на карте должен появиться overlay с инструкцией, что для того что бы масштабировать карту нажмите Ctrl + колесико мышки</p>
-            <p>Создать и расположить пины на карте из json файла. При клике на каждый пин выводить какую нибудь информацию в небольшом всплывающем окошке, которое будет появляться над пином</p>
-            <p>Создать блок с фильтрами под картой и при клике на каждый элемент фильтра настроить фильтрацию пинов на карте в зависимости от выбранного фильтра</p>
-            <p>Если выбран изначально фильтр "Все объекты" и открыт у кого нибудь пина баллун, то при активации фильтра этого пина у которого открыт баллун, карта должна отфильтроваться, но баллун не должен закрываться. Если у пина открыт баллун и мы выбираем другой фильтр, то баллун должен закрыться</p>
+            <p>Сделайте кастомную яндекс карту территории Чехословакии ( нужно объединить Чехию и Словакию) на сером фоне</p>
+            <p>Все регионы должны быть одного цвета, также на карте должны быть отмечены столицы Чехии и Словакии</p>
             <div class="ya-map__inner">
-              <div class="ya-map__map" data-map="map-3" data-center="59.968513, 30.317772" data-zoom="15" data-markers-url="data/maps-markers.json"></div>
-              <div class="ya-map__message">
-                <p>Зажмите ctrl и крутите колесо прокрутки мышки, что бы приблизить карту</p>
-              </div>
-            </div>
-            <div class="map-filter">
-              <form class="map-filter__form" action="#" novalidate>
-                <div class="map-filter__list">
-                  <div class="map-filter__item">
-                    <input class="visually-hidden" type="radio" name="filterList" value="all" id="filterAll" checked>
-                    <label class="map-filter__label" for="filterAll">
-                      <div class="map-filter__icon">
-                        <svg width="50" height="50" aria-hidden="true">
-                          <use xlink:href="#icon-all-object"></use>
-                        </svg>
-                      </div><span>Все объекты</span>
-                    </label>
-                  </div>
-                  <div class="map-filter__item">
-                    <input class="visually-hidden" type="radio" name="filterList" value="park" id="filterPark">
-                    <label class="map-filter__label" for="filterPark">
-                      <div class="map-filter__icon">
-                        <svg width="50" height="50" aria-hidden="true">
-                          <use xlink:href="#icon-park"></use>
-                        </svg>
-                      </div><span>Парки</span>
-                    </label>
-                  </div>
-                  <div class="map-filter__item">
-                    <input class="visually-hidden" type="radio" name="filterList" value="museum" id="filterMuseum">
-                    <label class="map-filter__label" for="filterMuseum">
-                      <div class="map-filter__icon">
-                        <svg width="50" height="50" aria-hidden="true">
-                          <use xlink:href="#icon-museum"></use>
-                        </svg>
-                      </div><span>Музеи</span>
-                    </label>
-                  </div>
-                  <div class="map-filter__item">
-                    <input class="visually-hidden" type="radio" name="filterList" value="children" id="filterChildren">
-                    <label class="map-filter__label" for="filterChildren">
-                      <div class="map-filter__icon">
-                        <svg width="50" height="50" aria-hidden="true">
-                          <use xlink:href="#icon-children"></use>
-                        </svg>
-                      </div><span>Дет. сады</span>
-                    </label>
-                  </div>
-                  <div class="map-filter__item">
-                    <input class="visually-hidden" type="radio" name="filterList" value="hospital" id="filterHospital">
-                    <label class="map-filter__label" for="filterHospital">
-                      <div class="map-filter__icon">
-                        <svg width="50" height="50" aria-hidden="true">
-                          <use xlink:href="#icon-hospital"></use>
-                        </svg>
-                      </div><span>Поликлиники</span>
-                    </label>
-                  </div>
-                  <div class="map-filter__item">
-                    <input class="visually-hidden" type="radio" name="filterList" value="school" id="filterSchool">
-                    <label class="map-filter__label" for="filterSchool">
-                      <div class="map-filter__icon">
-                        <svg width="50" height="50" aria-hidden="true">
-                          <use xlink:href="#icon-school"></use>
-                        </svg>
-                      </div><span>Школы</span>
-                    </label>
-                  </div>
-                </div>
-              </form>
+              <div class="ya-map__map" data-map="map-5" data-center="49.5, 18.5" data-zoom="5" data-controls="zoomControl"></div>
             </div>
           </div>
         </section>
